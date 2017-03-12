@@ -18,16 +18,24 @@ def gradient_descent(xs, ys):
             step_b += (y - (a*x + b))
         a += LEARNING_RATE * (step_a)/m
         b += LEARNING_RATE * (step_b)/m
-        gradient_step_points.append((a,b))
+        gradient_step_points.append((a, b))
     return a, b
 
 def normalize(arr):
     min_val, max_val = min(arr), max(arr)
-    return [ (x-np.mean(arr))/(max_val-min_val) for x in arr ]
+    return [ (x-np.mean(arr)) / (max_val-min_val) for x in arr ]
+
+
+def normal_equation(xs, ys):
+    X = np.c_[np.ones(len(xs)),xs].T
+    return np.linalg.pinv((X.dot(X.T))).dot(X).dot(ys)
 
 def plot_line(xs, ys, a, b):
-    print "{}x + {}".format(a, b)
+    print "Gradient: {}x + {}".format(a, b)
     plt.plot(xs, ys, 'o', markersize=7)
+    plt.plot(xs, [a*x + b for x in xs])
+    b, a = normal_equation(xs, ys)
+    print "Normal: {}x + {}".format(a, b)
     plt.plot(xs, [a*x + b for x in xs])
 
 def plot_contour(xs, ys):
@@ -41,12 +49,12 @@ def plot_contour(xs, ys):
             res += (y - (arr[0]*x + arr[1]))**2
         return res/len(arr[0])
     fmesh = f(np.array([xmesh, ymesh]))
-    plt.contour(xmesh,ymesh,fmesh,50)
+    plt.contour(xmesh, ymesh, fmesh, 50)
 
 def plot_learning_rates(xs, ys):
     global LEARNING_RATE, gradient_step_points
     plt.figure()
-    plt.ylim((0,0.002))
+    plt.ylim((0, 0.002))
     for rate in [10., 1., 0.1, 0.01, 0.001, 0.0001]:
         LEARNING_RATE = rate
         gradient_step_points = []
@@ -58,10 +66,12 @@ def plot_learning_rates(xs, ys):
 
 
 boston_x, boston_y = load_boston(True)
-xs = normalize(boston_x[:,8])
-ys = normalize(boston_x[:,9])
+xs = normalize(boston_x[:, 8])
+ys = normalize(boston_x[:, 9])
 a, b = gradient_descent(xs, ys)
 plot_line(xs, ys, a, b)
 plot_contour(xs, ys)
-plot_learning_rates(xs,ys)
+plot_learning_rates(xs, ys)
 plt.show()
+
+
