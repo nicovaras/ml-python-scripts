@@ -21,22 +21,16 @@ def cost_function(theta, x, y):
 # GD in two variables
 def gradient_descent(xs, ys):
     feature_lenght = len(xs[0])
-    m = feature_lenght
+    m = len(xs)
     theta = np.array([0.] * feature_lenght)
 
     for _ in xrange(100):
         step_theta = np.array([0.] * feature_lenght)
         for i in xrange(len(ys)):
-            for j in xrange(1,feature_lenght):
-                step_theta[j] += xs[i][j] * cost_function(theta, xs[i], ys[i])
-            # intercept
-            step_theta[0] += cost_function(theta, xs[i], ys[i])
+            cost = cost_function(theta, xs[i], ys[i])
+            step_theta += xs[i] * cost
         theta += LEARNING_RATE * (step_theta)/m
     return theta
-
-def normalize(arr):
-    min_val, max_val = min(arr), max(arr)
-    return [(x-np.mean(arr)) / (max_val-min_val) for x in arr]
 
 def map_features(f1, f2, order=1):
     def iterate():
