@@ -5,3 +5,4 @@
 
 ## Logistic regression
 <img src="https://github.com/nicovaras/ml-python-scripts/blob/master/logistic_regression.png" width=600px>
+<img src="https://github.com/nicovaras/ml-python-scripts/blob/master/multi_log.png" width=600px>
