@@ -32,12 +32,10 @@ def run():
     X = np.c_[np.ones(len(X)), X]
     y = np.where(y == 0, -1, 1)
     theta = gradient_descent(X, y)
-    x1 = np.linspace(-5, 5, 100)*theta[2]*len(X)
-    x2 = np.linspace(-5, 5, 100)*theta[1]*len(X)
     plt.axis((-5,5,-5,5))
 
     plt.scatter(X[:, 1], X[:, 2], c=y[:], s=50, cmap='bwr')
-    plt.plot(np.linspace(-5, 5, 100), x1 + x2 + theta[2])
+    plt.plot(np.linspace(-5, 5, 100), [-(theta[1]/theta[2]*x + theta[0]/theta[2]) for x in np.linspace(-5, 5, 100)])
 
     plt.figure()
     plt.axis((-5,5,-5,5))
@@ -53,7 +51,7 @@ def run():
 
 
     plt.scatter(X[:, 1], X[:, 2], c=yhat, s=50, cmap='bwr')
-    plt.plot(np.linspace(-5, 5, 100), x1 + x2 + theta[2])
+    plt.plot(np.linspace(-5, 5, 100), [-(theta[1]/theta[2]*x + theta[0]/theta[2]) for x in np.linspace(-5, 5, 100)])
 
     plt.show()
 
