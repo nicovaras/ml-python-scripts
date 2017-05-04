@@ -10,3 +10,11 @@
 ## Perceptron
 <img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/percep.png" width=600px>
 <img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/percep2.png" width=600px>
+
+## SVM
+
+### Linear
+<img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/svm.png" width=600px>
+
+### Gaussian
+<img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/svm_gauss.png" width=600px>
