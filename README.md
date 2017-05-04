@@ -18,3 +18,6 @@
 
 ### Gaussian
 <img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/svm_gauss.png" width=600px>
+
+### Gaussian (XOR problem)
+<img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/svm_xor.png" width=600px>

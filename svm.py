@@ -87,6 +87,6 @@ def plot(X, y, X_sv, y_sv, w, b):
     # plot_margin(w, b, -1, 'k--')
     plt.show()
 
-X, y = linear_problem()
+X, y = xor_problem()
 X_sv, y_sv, w, b = fit(X, y, kernel=gaussian_fourier_kernel, C=50)
 plot(X, y, X_sv, y_sv, w, b)
