@@ -21,3 +21,6 @@
 
 ### Gaussian (XOR problem)
 <img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/svm_xor.png" width=600px>
+
+### Gaussian with contour map (XOR problem)
+<img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/svm_gauss_margin.png" width=600px>
