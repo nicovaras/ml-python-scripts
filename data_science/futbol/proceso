@@ -1,0 +1,20 @@
+-country: solos 7 paises nombres
+-league: nombre del torneo, asociado al country
+-match: ids de los jugadores (home/away_player_1/11), posiciones x e y en la cancha,
+card xml, corner xml, cross xml, date, foul xaml, goal xsml, home/away_team_goal cant de goles, liga id, posesion xml, stage del torneo, odds de varias webs de apuestas
+-player: nombre edad, altura, peso, nac
+-player attrs: date? overall score, score de todas las cosas, pata con la que patea
+-team: id_api, id_fifa, nombre, short name
+-team attrs: id_api, id_fifa, date?, nada--
+
+
+Proceso:
+1- Ver que ligas y que rango de fechas entran: 11 ligas europeas desde el 18-07-2008 al 25-05-2016
+2- baje las naciconalidades
+3- filtre por argentinos
+4 - saque en que eqpouipo jugo cada uno, y cuales matches en cada equiop, hay que matchear players, teams y matches
+5 - quienes jugaron mas?
+6- que liga tuvo ams argentinos?
+7- que equipo?
+8- que partido tuvo ams argentinos?
+
