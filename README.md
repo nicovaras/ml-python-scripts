@@ -27,4 +27,4 @@
 
 ## Kmeans
 5 clusters, last one is y_true
-<img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/kmeans.png" width=600px>
+<img src="https://github.com/nicovaras/ml-python-scripts/blob/master/img/kmeans.png" width=600px height=1000px>
